@@ -11,3 +11,7 @@ Just lining up the rules and regulations of the game.
 Day 3
 Completed the workflow and GUI part of the game.
 And debugged the code for errors and everything. Now the game game is running with errors.
+
+Day 4
+Designed the functioning and workflow of the flappy bird clone. Installed the required modules.
+Defined the global variables for the same.
