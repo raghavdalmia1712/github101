@@ -10,4 +10,4 @@ Just lining up the rules and regulations of the game.
 
 Day 3
 Completed the workflow and GUI part of the game.
-And debugged the code for errors and evrything. Now the game game is running with errors.
+And debugged the code for errors and everything. Now the game game is running with errors.
