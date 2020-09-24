@@ -90,7 +90,7 @@ class Game(tk.Canvas):
                     self.bricks.append(self.create_rectangle(col*self.bricksWidth, line*self.bricksHeight, (col+1)*self.bricksWidth, (line+1)*self.bricksHeight, fill=self.bricksColors[el], width=2, outline="#ffffff"))
         # If there is not any more level to load, the game is finished and the end of game screen is displayed (with player time).
         except IOError:
-            self.displayText("GAME ENDED IN\n" + "%02d sec %02d" % (int(self.seconds)%60, (self.seconds*100)%100) hide = False)
+            self.displayText("GAME ENDED IN\n" + "%02d sec %02d" % (int(self.seconds)%60, (self.seconds*100)%100), hide = False)
             return
         self.displayText("LEVEL\n"+str(self.levelNum))
     
@@ -181,6 +181,7 @@ class Game(tk.Canvas):
                     self.delete(self.bricks[i])
                     del self.bricks[i]
             i +=1
+
         self.won = len(self.bricks) == 0
 
         # Collisions computation between ball and edge of screen
@@ -202,6 +203,9 @@ class Game(tk.Canvas):
             else:
                 self.losed = True
 
+        self.move(self.ball, self.ballSpeed*math.cos(self.ballAngle), -self.ballSpeed*math.sin(self.ballAngle))
+        self.coords(self.ballNext, tk._flatten(self.coords(self.ball)))
+
     # This method, called at each frame, manages the remaining time
     # for each of effects and displays them (bar and ball size...).
     def updateEffects(self):
@@ -221,6 +225,12 @@ class Game(tk.Canvas):
         if self.effects["barTall"][0] != self.effectsPrev["barTall"][0]:
             diff = self.effects["barTall"] - self.effectsPrev["barTall"][0]
             self.barWidth += diff*60
+            coords = self.coords(self.ball)
+            self.coords(self.ball, tk._flatten((coords[0]-diff*10, coords[1]-diff*10, coords[2]+diff*10, coords[3]+diff*10)))
+        # "ballTall" effect increases the ball size.
+        if self.effects["ballTall"][0] != self.effectsPrev["ballTall"][0]:
+            diff = self.effects["ballTall"][0] - self.effectsPrev["ballTall"][0]
+            self.ballRadius += diff*10
             coords = self.coords(self.ball)
             self.coords(self.ball, tk._flatten((coords[0]-diff*10, coords[1]-diff*10, coords[2]+diff*10, coords[3]+diff*10)))
 
@@ -260,4 +270,47 @@ class Game(tk.Canvas):
 
         objectCoords = self.coords(el1)
         obstacleCoords = self.coords(el2)
-        
+
+        if objectCoords[2] < obstacleCoords[0] + 5:
+            collisionCounter = 1
+        if objectCoords[3] < obstacleCoords[1] + 5:
+            collisionCounter = 2
+        if objectCoords[0] > obstacleCoords[2] - 5:
+            collisionCounter = 3
+        if objectCoords[1] > obstacleCoords[3] - 5:
+            collisionCounter = 4
+
+        return collisionCounter
+
+
+# This function is called key down.
+def eventsPress(event):
+    global game
+
+    if event.keysym == "Left":
+        game.keyPressed[0] = 1
+    elif event.keysym == "Right":
+        game.keyPressed[1] = 1
+    elif event.keysym == "space" and not(game.textDisplayed):
+        game.ballThrown = True
+
+# This function is called key up.
+def eventsRelease(event):
+    global game
+
+    if event.keysym == "Left":
+        game.keyPressed[0] = 0
+    elif event.keysym == "Right":
+        game.keyPressed[1] = 0
+
+
+# Initialization of the window
+root = tk.Tk()
+root.title("Brick Breaker")
+root.resizable(0,0)
+root.bind("<Key>", eventsPress)
+root.bind("<KeyRelease>", eventsRelease)
+
+# Starting up the game
+game = Game(root)
+root.mainloop()
