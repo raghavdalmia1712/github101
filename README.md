@@ -15,3 +15,7 @@ And debugged the code for errors and everything. Now the game game is running wi
 Day 4
 Designed the functioning and workflow of the flappy bird clone. Installed the required modules.
 Defined the global variables for the same.
+
+Day 5
+Worked out the features of the game. And used photoshop the graphics of the game.
+Completed the full lined code for the game.
