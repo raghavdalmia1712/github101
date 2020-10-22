@@ -94,7 +94,7 @@ class Game(tk.Canvas):
             return
         self.displayText("LEVEL\n"+str(self.levelNum))
     
-    # This method, called each 1/60 of seconde, computes again
+    # This method, called each 1/60 of seconds, computes again
     # the properties of all elements (positions, collisions, effects...).
     def nextFrame(self):
         if self.ballThrown and not(self.textDisplayed):
