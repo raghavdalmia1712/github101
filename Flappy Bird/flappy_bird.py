@@ -90,7 +90,7 @@ def mainGame():
         if crashTest:
             return
         
-        # Check for score
+        # Check for the score
         playerMidPos = playerx + GAME_SPRITES['player'].get_width()/2
         for pipe in upperPipes:
             pipeMidPos = pipe['x'] + GAME_SPRITES['pipe'][0].get_width()/2
