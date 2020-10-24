@@ -283,7 +283,7 @@ class Game(tk.Canvas):
         return collisionCounter
 
 
-# This function is called key down.
+# This function is known as key down.
 def eventsPress(event):
     global game
 
