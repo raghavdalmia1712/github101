@@ -177,7 +177,7 @@ def getRandomPipe():
     return pipe
 
 if __name__ == "__main":
-# This will be the main point from where our game will start
+# This will be the main point from where our game will finally start
     pygame.init() # Initialize all pygame's module
     FPSCLOCK = pygame.time.Clock()
     pygame.display.set_caption("Flappy Bird")
