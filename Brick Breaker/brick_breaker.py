@@ -4,6 +4,7 @@ import math
 import copy
 
 # Main class: inherit from tk.Canvas class
+#game
 class Game(tk.Canvas):
     textDisplayed = False
     linesNb = 20
