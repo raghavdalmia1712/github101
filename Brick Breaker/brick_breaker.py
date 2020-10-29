@@ -315,3 +315,4 @@ root.bind("<KeyRelease>", eventsRelease)
 # Starting up the game
 game = Game(root)
 root.mainloop()
+#thank you
