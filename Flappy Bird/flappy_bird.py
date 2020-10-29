@@ -199,7 +199,7 @@ if __name__ == "__main":
     pygame.image.load(PIPE).convert_alpha()
     )
 
-    # Game sounds
+    # Game sounds full on
     GAME_SOUNDS['die'] = pygame.mixer.Sound('gallery/audio/die.wav')
     GAME_SOUNDS['hit'] = pygame.mixer.Sound('gallery/audio/hit.wav')
     GAME_SOUNDS['point'] = pygame.mixer.Sound('gallery/audio/point.wav')
