@@ -10,8 +10,19 @@ Just lining up the rules and regulations of the game.
 
 Day 3
 Completed the workflow and GUI part of the game.
-And debugged the code for errors and everything. Now the game game is running with errors.
+And debugged the code for errors and everything. Now the game game is running without errors.
 
 Day 4
 Designed the functioning and workflow of the flappy bird clone. Installed the required modules.
 Defined the global variables for the same.
+
+Day 5
+Worked out the features of the game. And used photoshop the graphics of the game.
+Completed the full lined code for the game.
+
+Day 6
+Debugged the game and now it is running with any errors.
+
+Day 7
+Installed android studio and flutter.
+And learnt dart for the starting.

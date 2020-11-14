@@ -4,6 +4,7 @@ import math
 import copy
 
 # Main class: inherit from tk.Canvas class
+#game
 class Game(tk.Canvas):
     textDisplayed = False
     linesNb = 20
@@ -94,7 +95,7 @@ class Game(tk.Canvas):
             return
         self.displayText("LEVEL\n"+str(self.levelNum))
     
-    # This method, called each 1/60 of seconde, computes again
+    # This method, called each 1/60 of seconds, computes again
     # the properties of all elements (positions, collisions, effects...).
     def nextFrame(self):
         if self.ballThrown and not(self.textDisplayed):
@@ -283,7 +284,7 @@ class Game(tk.Canvas):
         return collisionCounter
 
 
-# This function is called key down.
+# This function is known as key down.
 def eventsPress(event):
     global game
 
@@ -314,3 +315,4 @@ root.bind("<KeyRelease>", eventsRelease)
 # Starting up the game
 game = Game(root)
 root.mainloop()
+#thank you

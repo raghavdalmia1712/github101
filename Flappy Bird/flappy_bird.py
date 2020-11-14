@@ -1,8 +1,7 @@
 import random
 import sys # We will use sys.exit to exit the program
 import pygame
-from pygame.locals import *
-
+from pygame.locals import *  
 # Global variables for the game.
 FPS = 32
 SCREENWIDTH = 289
@@ -90,7 +89,7 @@ def mainGame():
         if crashTest:
             return
         
-        # Check for score
+        # Check for the score
         playerMidPos = playerx + GAME_SPRITES['player'].get_width()/2
         for pipe in upperPipes:
             pipeMidPos = pipe['x'] + GAME_SPRITES['pipe'][0].get_width()/2
@@ -177,7 +176,7 @@ def getRandomPipe():
     return pipe
 
 if __name__ == "__main":
-# This will be the main point from where our game will start
+# This will be the main point from where our game will finally start
     pygame.init() # Initialize all pygame's module
     FPSCLOCK = pygame.time.Clock()
     pygame.display.set_caption("Flappy Bird")
@@ -199,7 +198,7 @@ if __name__ == "__main":
     pygame.image.load(PIPE).convert_alpha()
     )
 
-    # Game sounds
+    # Game sounds full on
     GAME_SOUNDS['die'] = pygame.mixer.Sound('gallery/audio/die.wav')
     GAME_SOUNDS['hit'] = pygame.mixer.Sound('gallery/audio/hit.wav')
     GAME_SOUNDS['point'] = pygame.mixer.Sound('gallery/audio/point.wav')
