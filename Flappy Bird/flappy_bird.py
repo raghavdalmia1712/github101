@@ -1,7 +1,7 @@
 import random
 import sys # We will use sys.exit to exit the program
 import pygame
-from pygame.locals import * 
+from pygame.locals import *
 
 # Global variables for the game.
 FPS = 32
