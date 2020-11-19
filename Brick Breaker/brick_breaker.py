@@ -4,7 +4,6 @@ import math
 import copy
 
 # Main class: inherit from tk.Canvas class
-#game
 class Game(tk.Canvas):
     textDisplayed = False
     linesNb = 20
@@ -315,4 +314,3 @@ root.bind("<KeyRelease>", eventsRelease)
 # Starting up the game
 game = Game(root)
 root.mainloop()
-#thank you
