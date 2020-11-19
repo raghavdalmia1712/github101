@@ -22,7 +22,3 @@ Completed the full lined code for the game.
 
 Day 6
 Debugged the game and now it is running with any errors.
-
-Day 7
-Installed android studio and flutter.
-And learnt dart for the starting.
