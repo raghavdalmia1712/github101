@@ -1,5 +1,7 @@
 # github101
 
+TITLE: This is the main Readme File, Do check out
+
 Day 1
 Designed the functioning of the game. Researched about the prerequisites and everything.
 Made the class for all the things required for the brick breaker game.
